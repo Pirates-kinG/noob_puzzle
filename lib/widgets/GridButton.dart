@@ -21,7 +21,7 @@ class GridButton extends StatelessWidget {
         ),
       ),
 
-      onPressed: click(),
+      onPressed: click,
     );
   }
 }

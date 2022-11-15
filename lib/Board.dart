@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'Menu.dart';
-import 'MyTitle.dart';
-import 'Grid.dart';
+import 'widgets/Menu.dart';
+import 'widgets/MyTitle.dart';
+import 'widgets/Grid.dart';
 
 class Board extends StatefulWidget {
   @override
@@ -91,6 +91,7 @@ class _BoardState extends State<Board> {
     }
     return true;
   }
+
   void checkWin() {
     if (isSorted(numbers)) {
       isActive = false;
@@ -133,8 +134,4 @@ class _BoardState extends State<Board> {
           });
     }
   }
-
-
-
-
 }

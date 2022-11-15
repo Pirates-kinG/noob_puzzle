@@ -14,7 +14,7 @@ class ResetButton extends StatelessWidget {
           shape: MaterialStateProperty.all(RoundedRectangleBorder( borderRadius: new BorderRadius.circular(8.0))),
         fixedSize: MaterialStateProperty.all(Size(100, 50))
       ),
-      onPressed: reset(),
+      onPressed: reset,
 
       child: Text("Reset",
         style:TextStyle(
