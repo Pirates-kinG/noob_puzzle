@@ -91,6 +91,48 @@ class _BoardState extends State<Board> {
     }
     return true;
   }
+  void checkWin() {
+    if (isSorted(numbers)) {
+      isActive = false;
+      showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return Dialog(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0)), //this right here
+              child: Container(
+                height: 200,
+                child: Padding(
+                  padding: const EdgeInsets.all(30.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "You Win!!",
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      SizedBox(
+                        width: 220.0,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: Text(
+                            "Close",
+                            style: TextStyle(color: Colors.white),
+                          ),
+
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            );
+          });
+    }
+  }
 
 
 
