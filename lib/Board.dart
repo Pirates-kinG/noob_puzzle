@@ -65,6 +65,33 @@ class _BoardState extends State<Board> {
     checkWin();
   }
 
+  void startTime() {
+    if (isActive) {
+      setState(() {
+        secondsPassed = secondsPassed + 1;
+      });
+    }
+  }
+
+  void reset() {
+    setState(() {
+      numbers.shuffle();
+      move = 0;
+      secondsPassed = 0;
+      isActive = false;
+    });
+  }
+
+  bool isSorted(List list) {
+    int prev = list.first;
+    for (var i = 1; i < list.length - 1; i++) {
+      int next = list[i];
+      if (prev > next) return false;
+      prev = next;
+    }
+    return true;
+  }
+
 
 
 
